@@ -1,0 +1,47 @@
+[
+    {
+        "nombre":"Assassins Creed IV",
+        "precio":4000,
+        "img":"/StockAssets/1.jpg",
+        "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic necessitatibus autem impedit fuga error possimus, iusto veritatis id? Facere iure soluta nemo eius illum,amet quisquam voluptatibus quis optio voluptatum.",
+        "categoria":"Aventura",
+        "idCategoria":1,
+        "id":1
+    },
+    {
+        "nombre":"Batman Arkham Knight",
+        "precio":3000,
+        "img":"/StockAssets/2.jpg",
+        "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic necessitatibus autem impedit fuga error possimus, iusto veritatis id? Facere iure soluta nemo eius illum,amet quisquam voluptatibus quis optio voluptatum.",
+        "categoria":"Aventura",
+        "idCategoria":1,
+        "id":2
+    },
+    {
+        "nombre":"God of War",
+        "precio":4300,
+        "img":"/StockAssets/3.jpg",
+        "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic necessitatibus autem impedit fuga error possimus, iusto veritatis id? Facere iure soluta nemo eius illum,amet quisquam voluptatibus quis optio voluptatum.",
+        "categoria":"Aventura",
+        "idCategoria":1,
+        "id":3
+    },
+    {
+        "nombre":"The Last of Us",
+        "precio":5000,
+        "img":"/StockAssets/4.jpg",
+        "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic necessitatibus autem impedit fuga error possimus, iusto veritatis id? Facere iure soluta nemo eius illum,amet quisquam voluptatibus quis optio voluptatum.",
+        "categoria":"Aventura",
+        "idCategoria":1,
+        "id":4
+    },   {
+        "nombre":"Resident Evil 2",
+        "precio":4500,
+        "img":"/StockAssets/5.jpg",
+        "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic necessitatibus autem impedit fuga error possimus, iusto veritatis id? Facere iure soluta nemo eius illum,amet quisquam voluptatibus quis optio voluptatum.",
+        "categoria":"Terror",
+        "idCategoria":2,
+        "id":5
+    }
+
+]
