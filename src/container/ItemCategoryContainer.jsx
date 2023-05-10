@@ -14,9 +14,9 @@ const ItemCategoryContainer =()=>{
                         <h4 >{product.nombre}</h4>
                         <img  src={product.img} alt="" />
                         <h4 >{product.precio}</h4>
-                        <button >Muestrame mas
-                            <Link to={`/items/${product.id}`}></Link>
-                        </button>
+                        <li >
+                            <Link to={`items/${product.id}`}>Muestrame mas</Link>
+                         </li>
                     </div>
                 ))}
             </>

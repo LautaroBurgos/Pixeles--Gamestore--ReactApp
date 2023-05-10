@@ -13,7 +13,7 @@ function App() {
         <Routes>
         <Route path="/" element={<ItemListContainer greeting={"Bienvenidos a Pixeles-Gamestore"}/>}/>
         <Route exact path="category/:idCategoria" element={<ItemCategoryContainer/>}/>
-        <Route exact path="/items/:id/" element={<ItemDetailContainer/>}/>
+        <Route exact path="items/:idItem/" element={<ItemDetailContainer/>}/>
       </Routes>
     </>
    

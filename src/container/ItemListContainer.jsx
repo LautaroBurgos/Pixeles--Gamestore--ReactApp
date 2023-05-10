@@ -13,9 +13,8 @@ const ItemListContainer =({greeting})=>{
                         <h4 >{product.nombre}</h4>
                         <img  src={product.img} alt="" />
                         <h4 >{product.precio}</h4>
-                        <li key={product.id}>
-                        Muestrame mas
-                            <Link to={`items/${product.id}`}>{product.id}</Link>
+                        <li >
+                            <Link to={`items/${product.id}`}>Muestrame mas</Link>
                          </li>
                         
                     </div>

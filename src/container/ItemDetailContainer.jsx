@@ -2,7 +2,7 @@ import React from "react";
 import StockProductos from '../StockProductos.json' ;
 import { Link, NavLink, Route,Routes,useParams } from "react-router-dom";
 
-const ItemDetailContainer =({})=>{
+const ItemDetailContainer =()=>{
     const {idItem}=useParams();
     console.log(idItem);
     const itemsFiltrados=StockProductos.filter((item)=>item.id==idItem);
