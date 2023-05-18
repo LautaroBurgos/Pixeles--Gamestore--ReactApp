@@ -1,25 +1,25 @@
 import React from "react";
 import StockProductos from '../StockProductos.json' ;
-import { Link, NavLink ,useParams} from "react-router-dom";
+import { NavLink ,useParams} from "react-router-dom";
+import { cardStyle, containerStyle, imgStyle, linkStyle } from "./ItemListContainer";
 
 const ItemCategoryContainer =()=>{
-    const {idCategoria}=useParams();
-    console.log(idCategoria);
-    const itemsFiltrados=StockProductos.filter((item)=>item.idCategoria==idCategoria);
+    const {idCategory}=useParams();
+    const itemsFiltrados=StockProductos.filter((item)=>item.idCategoria==idCategory);
     return (
-            <>
+            <div style={containerStyle}>
                  {
                 itemsFiltrados.map((product)=>(
-                    <div key={product.id}>
+                    <div style={cardStyle} key={product.id}>
                         <h4 >{product.nombre}</h4>
-                        <img  src={product.img} alt="" />
+                        <img style={imgStyle}  src={product.img} alt="" />
                         <h4 >{product.precio}</h4>
-                        <li >
-                            <Link to={`items/${product.id}`}>Muestrame mas</Link>
+                        <li style={linkStyle} >
+                            <NavLink to={`/items/${product.id}`}>Muestrame mas</NavLink>
                          </li>
                     </div>
                 ))}
-            </>
+            </div>
             
             
     
