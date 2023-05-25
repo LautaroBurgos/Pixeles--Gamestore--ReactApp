@@ -1,7 +1,7 @@
 import React from "react";
 import StockProductos from '../StockProductos.json' ;
 import { NavLink ,useParams} from "react-router-dom";
-import { cardStyle, containerStyle, imgStyle, linkStyle } from "./ItemListContainer";
+import {containerStyle,imgStyle,titleStyle,linkStyle,cardStyle} from "./ItemContainerStyles";
 
 const ItemCategoryContainer =()=>{
     const {idCategory}=useParams();

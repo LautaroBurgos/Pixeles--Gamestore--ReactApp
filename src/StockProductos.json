@@ -6,6 +6,7 @@
         "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic necessitatibus autem impedit fuga error possimus, iusto veritatis id? Facere iure soluta nemo eius illum,amet quisquam voluptatibus quis optio voluptatum.",
         "categoria":"Aventura",
         "idCategoria":1,
+        "stock":13,
         "id":1
     },
     {
@@ -15,6 +16,7 @@
         "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic necessitatibus autem impedit fuga error possimus, iusto veritatis id? Facere iure soluta nemo eius illum,amet quisquam voluptatibus quis optio voluptatum.",
         "categoria":"Aventura",
         "idCategoria":1,
+        "stock":3,
         "id":2
     },
     {
@@ -24,6 +26,7 @@
         "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic necessitatibus autem impedit fuga error possimus, iusto veritatis id? Facere iure soluta nemo eius illum,amet quisquam voluptatibus quis optio voluptatum.",
         "categoria":"Aventura",
         "idCategoria":1,
+        "stock":17,
         "id":3
     },
     {
@@ -33,6 +36,7 @@
         "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic necessitatibus autem impedit fuga error possimus, iusto veritatis id? Facere iure soluta nemo eius illum,amet quisquam voluptatibus quis optio voluptatum.",
         "categoria":"Aventura",
         "idCategoria":1,
+        "stock":12,
         "id":4
     },   {
         "nombre":"Resident Evil 2",
@@ -41,6 +45,7 @@
         "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic necessitatibus autem impedit fuga error possimus, iusto veritatis id? Facere iure soluta nemo eius illum,amet quisquam voluptatibus quis optio voluptatum.",
         "categoria":"Terror",
         "idCategoria":2,
+        "stock":6,
         "id":5
     }
 

@@ -40,7 +40,9 @@ const NavBar =()=>{
                   <Link to={`/`} style={{textDecoration: 'none'}} >
                   <li style={{textDecoration: 'none'}} key="Inicio">Inicio</li>
                   </Link>
-       
+                  <Link to={`/cart`} style={{textDecoration: 'none'}} >
+                  <li style={{textDecoration: 'none'}} key="Carrito">Carrito</li>
+                  </Link>
               {categorias.map((categoria)=>(
                 <li key={categoria.idCategoria}>
                   <Link to={`category/${categoria.idCategoria}`}>{categoria.nombreCategoria}</Link>
