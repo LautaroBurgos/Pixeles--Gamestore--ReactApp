@@ -13,7 +13,7 @@ const ItemCategoryContainer =()=>{
                     <div style={cardStyle} key={product.id}>
                         <h4 >{product.nombre}</h4>
                         <img style={imgStyle}  src={product.img} alt="" />
-                        <h4 >{product.precio}</h4>
+                        <h4 >${product.precio}</h4>
                         <li style={linkStyle} >
                             <NavLink to={`/items/${product.id}`}>Muestrame mas</NavLink>
                          </li>

@@ -1,9 +1,11 @@
 import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
-import { Link } from "react-router-dom";
+import CategoryListContainer from "../CategoryListContainer/CategoryListContainer";
+// background-color: rgb(47, 44, 72) ;
 const navBarStyle={
   display:'flex',
   justifyContent:'space-around',
+  alignItems:'center',
   color: 'white',
   fontSize: '18px',
   fontFamily: 'Roboto, sans-serif',
@@ -12,7 +14,7 @@ const navBarStyle={
   border: '1px solid black',
   width: '99.9%',
   height: '100px',
-  backgroundColor: 'black ',
+  backgroundColor: 'rgb(47, 44, 72)',
   paddingTop:'10px',
   paddingBottom:'10px',
   marginBottom:'10px',
@@ -22,34 +24,19 @@ const imgStyle={
   height:'100px',
   borderRadius:'50px'
 }
-const listStyle={
-  listStyle: 'none',
-  color:'white',
-  cursor:'pointer'
-}
+
+
 const NavBar =()=>{
-  const categorias =[{idCategoria:1,nombreCategoria:"Aventura"},{idCategoria:2,nombreCategoria:"Terror"}]
+ 
     return (
       <header>
         <nav style={navBarStyle}>
             <img style={imgStyle} src="/StockAssets/logo.png" alt="logo" />
-            <CartWidget/>
-           
-             <ul style={listStyle}>
+            
 
-                  <Link to={`/`} style={{textDecoration: 'none'}} >
-                  <li style={{textDecoration: 'none'}} key="Inicio">Inicio</li>
-                  </Link>
-                  <Link to={`/cart`} style={{textDecoration: 'none'}} >
-                  <li style={{textDecoration: 'none'}} key="Carrito">Carrito</li>
-                  </Link>
-              {categorias.map((categoria)=>(
-                <li key={categoria.idCategoria}>
-                  <Link to={`category/${categoria.idCategoria}`}>{categoria.nombreCategoria}</Link>
-                </li>
-              ))}
-             </ul>
-    
+            <CategoryListContainer></CategoryListContainer>
+
+             <CartWidget/>
           
         </nav>
       </header>

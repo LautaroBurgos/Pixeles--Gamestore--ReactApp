@@ -15,7 +15,7 @@ const cardStyle={
     borderRadius:'10px',
     width: '450px',
     height: '500px',
-    backgroundColor: 'black '
+    backgroundColor: 'rgb(47, 44, 72) '
 }
 const imgStyle={
     width:'250px',
