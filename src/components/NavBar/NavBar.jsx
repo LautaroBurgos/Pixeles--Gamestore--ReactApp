@@ -1,7 +1,6 @@
 import React from "react";
-import CartWidget from "../CartWidget/CartWidget";
-import CategoryListContainer from "../CategoryListContainer/CategoryListContainer";
-// background-color: rgb(47, 44, 72) ;
+import CartWidget from "../CartComponents/CartWidget/CartWidget";
+import CategoryListContainer from "./CategoryListContainer/CategoryListContainer";
 const navBarStyle={
   display:'flex',
   justifyContent:'space-around',
@@ -24,20 +23,14 @@ const imgStyle={
   height:'100px',
   borderRadius:'50px'
 }
-
-
 const NavBar =()=>{
  
     return (
       <header>
         <nav style={navBarStyle}>
             <img style={imgStyle} src="/StockAssets/logo.png" alt="logo" />
-            
-
-            <CategoryListContainer></CategoryListContainer>
-
-             <CartWidget/>
-          
+            <CategoryListContainer></CategoryListContainer> 
+            <CartWidget/>
         </nav>
       </header>
     )

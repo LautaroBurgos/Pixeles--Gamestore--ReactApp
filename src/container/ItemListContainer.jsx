@@ -1,39 +1,37 @@
 import React,{useEffect, useState} from "react";
-import { Link } from "react-router-dom";
-import {containerStyle,imgStyle,linkStyle,cardStyle} from "./ItemContainerStyles";
-import StockProductos from "../StockProductos.json";
-
+import {collection,getDocs } from "firebase/firestore";
+import { db } from "../services/firebaseConfig";
+import Card from "../components/Card/Card";
+import { containerStyle } from "./ItemContainerStyles";
 const ItemListContainer =()=>{
     const [items,setItems]=useState([]);
     const [loading,setLoading]= useState(true);
 
     useEffect(()=>{
-        const productList=new Promise ((resolve,reject)=>{
-           setTimeout(()=>{
-            resolve(StockProductos)
-           },2000) 
-        })
-        productList.then(result =>{
-            setItems(result);
-            setLoading(false);
+
+        const itemsCollection = collection(db,"items");
+        getDocs(itemsCollection).then((snapshot)=>{
+                setItems(snapshot.docs.map((doc)=>({id:doc.id,...doc.data()})));
+              
         });
+        setTimeout(()=>{
+           
+            setLoading(false);
+        },2000);
+
+
     },[]);
+   
+  
+
 
     return (
         <div style={containerStyle}>
            {loading ? (
             <p>Cargando...</p>
          ) : (
-            items.map((product)=>(
-                <div style={cardStyle} key={product.id}>
-                    <h4 >{product.nombre}</h4>
-                    <img style={imgStyle}  src={product.img} alt="" />
-                    <h4 style={{fontSize:'24px'}} >${product.precio}</h4>
-                    <li style={linkStyle} >
-                        <Link to={`items/${product.id}`}>Muestrame mas</Link>
-                     </li>
-                    
-                </div>
+            items.map((item)=>(
+               <Card key={item.id} item={item}></Card>
             ))
          )}
         </div>

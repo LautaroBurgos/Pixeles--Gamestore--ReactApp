@@ -1,62 +1,100 @@
 import {useParams } from "react-router-dom";
 import '@fontsource/roboto';
-import { containerStyle } from "./ItemContainerStyles";
-import ItemCount from "../components/ItemCount/ItemCount";
-import StockProductos from '../StockProductos.json' ;
+import ItemCount from "../components/Card/ItemCount/ItemCount"
 import React,{ useState,useEffect } from "react";
+import {doc,getDoc} from "firebase/firestore";
+import { db } from "../services/firebaseConfig";
+const detailContainerStyle={
+    marginLeft:'40px',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center'
+} 
 const detailStyle={
-    color: 'white',
+    display:'flex',
+    color: 'grey',
     fontSize: '18px',
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 'bold',
     textAlign: 'center',
     margin: '10px',
     padding: '15px',
-    border: '1px solid black',
     borderRadius:'10px',
-    width: '550px',
-    height: '750px',
-    backgroundColor: 'rgb(47, 44, 72) '
+    width: '850px',
+    height: '750px'
 }
 const imgStyle={
+    marginRight:'40px',
     width:'300px',
     height:'400px'
 }
+const textContainerStyle={
+    width:'300px'
+}
+const pContainerStyle={
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+}
+const pStyle={
+    margin:'3px'
+}
 const ItemDetailContainer =()=>{
     const {idItem}=useParams();
-    const [items,setItems]=useState([]);
+    const [item,setItem]=useState();
     const [loading,setLoading]= useState(true);
+    const [onStock,setOnStock]=useState('');
 
     useEffect(()=>{
-        const productList=new Promise ((resolve,reject)=>{
-           setTimeout(()=>{
-            resolve(StockProductos)
-           },2000) 
-        })
-        productList.then(result =>{
-            setItems(result);
-            setLoading(false);
+        const itemRef= doc(db,"items",idItem);
+        getDoc(itemRef).then((snapshot)=>{
+            if(snapshot.exists()){
+                setItem({id:snapshot.id,...snapshot.data()});
+                if(item!=undefined){
+                    if(item.stock>0){
+                        setOnStock(true);
+                    }else{
+                        setOnStock(false);
+                    }
+               }
+            }
+            setTimeout(()=>{
+                setLoading(false);
+            },2000);
         });
-    },[]);
 
-    const itemsFiltrados=items.filter((item)=>item.id==idItem);
+        
+    },[item]);
+
+ 
     return (
         
-            <div style={containerStyle}>
+            <div style={detailContainerStyle}>
                 {loading ? (
             <p>Cargando...</p>
          ) : (
-            itemsFiltrados.map((item)=>(
-                <div style={detailStyle} key={item.id}>
-                    <h4 >{item.nombre}</h4>
+                <div style={detailStyle} key={item.id}>       
                     <img style={imgStyle} src={item.img} alt="" />
-                    <h4 >${item.precio}</h4>
-                    <p>{item.descripcion}</p>
-                   
-                    <ItemCount stock={item.stock} initial="1" item={item}/>
+                    <div style={textContainerStyle}>
+                        <h4 >{item.name}</h4>
+                        <p>{item.description}</p>
+                        <div style={pContainerStyle}>
+                            <p style={pStyle}>Desde</p>
+                            <p style={{color:'black',margin:'5px'}}> {item.price}</p>
+                            <p style={pStyle}>ARS</p>
+                        </div>
+                        {
+                            onStock ?
+
+                            <ItemCount stock={item.stock} initial="1" item={item}/> :
+                            
+                            <h4>Producto fuera de stock</h4>
+                        }
+                       
+                    </div>
                  
                 </div>
-            ))
+          
          )}
             </div>
      

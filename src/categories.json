@@ -1,0 +1,18 @@
+[
+    {"idCategory":1,
+    "name":"Aventura"
+    },
+    {"idCategory":2,
+    "name":"Terror"
+    },
+    {"idCategory":3,
+    "name":"Accion"
+    },
+    {"idCategory":4,
+    "name":"Deportes"
+    },
+    {"idCategory":5,
+    "name":"Carreras"
+    }
+
+]

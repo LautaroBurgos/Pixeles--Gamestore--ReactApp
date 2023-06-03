@@ -1,11 +1,11 @@
 import React from "react";
 import { useContext } from "react";
-import {CartContext} from "../../context/CartContext";
-import { divStyle } from "./CartWidgetStyles";
+import { CartContext } from "../../../context/CartContext";
+import { cartWidgetStyle } from "./CartWidgetStyles";
 import { Link } from "react-router-dom";
 const CartWidget =()=>{
     const { cartList } = useContext(CartContext);
-    function calcularTotalItems(cartList) {
+    function calculateTotalItems(cartList) {
         let total=0;
         cartList.forEach(cartItem => {
             total+=cartItem.qty;
@@ -14,11 +14,11 @@ const CartWidget =()=>{
     }
     return (
         <Link to={`/cart`} style={{textDecoration: 'none'}} >
-                        <div style={divStyle}>
-            <p> 🛒{calcularTotalItems(cartList)}</p>
+                        <div style={cartWidgetStyle}>
+            <p> 🛒{calculateTotalItems(cartList)}</p>
             </div>
         </Link>
 
     )
 }
-export default CartWidget
+export default CartWidget;

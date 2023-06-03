@@ -1,9 +1,14 @@
 const containerStyle={
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center'
+    marginLeft:'40px',
+    display:'grid',
+    justifyItems:'center',
+    alignItems:'center',
+    gridTemplateColumns:'repeat(4,auto)',
+    gridGap:'10px'
 } 
 const cardStyle={
+    justifySelf:'center',
+    alignSelf:'center',
     color: 'white',
     fontSize: '18px',
     fontFamily: 'Roboto, sans-serif',
@@ -13,8 +18,8 @@ const cardStyle={
     padding: '5px',
     border: '1px solid black',
     borderRadius:'10px',
-    width: '450px',
-    height: '500px',
+    width: '400px',
+    height: '520px',
     backgroundColor: 'rgb(47, 44, 72) '
 }
 const imgStyle={
@@ -27,9 +32,15 @@ const titleStyle={
     fontWeight: 'bold',
     textAlign: 'center',
 }
-const linkStyle={
+const buttonStyle={
+    padding :'15px',
+    listStyle: 'none',
+    backgroundColor:'white',
+    cursor:'pointer',
+    borderRadius:'10px'
+  }
+  const linkStyle={
     listStyle: 'none',
     color:'white',
-    cursor:'pointer'
   }
-  export {containerStyle,imgStyle,titleStyle,linkStyle,cardStyle};
+  export {containerStyle,imgStyle,titleStyle,linkStyle,buttonStyle,cardStyle};
