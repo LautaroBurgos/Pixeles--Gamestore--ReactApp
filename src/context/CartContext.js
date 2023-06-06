@@ -24,6 +24,9 @@ export const CartContext = createContext();
     }
     const deleteItem=(id)=>{
         const updatedCartList = cartList.filter((cartItem) => cartItem.id !== id);
+        const myItem=cartList.find(cartItem=>cartItem.id==id);
+        let newTotal=(total-(myItem.item.price)*myItem.qty);
+        setTotal(newTotal);
         setCartList(updatedCartList);
     }
     
