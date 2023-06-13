@@ -1,8 +1,8 @@
 import { CheckoutFormDivStyle } from "./CheckoutFormStyle";
-import { useState } from "react";
-import { LabelStyle } from "./CheckoutFormStyle";
 import { InputStyle } from "./CheckoutFormStyle";
+import { LabelStyle } from "./CheckoutFormStyle";
 import { SubmitStyle } from "./CheckoutFormStyle";
+import { useState } from "react";
 const CheckoutForm= ({onConfirm})=>{
     const [name,setName]=useState('');
     const [phone,setPhone]=useState('');
@@ -13,28 +13,27 @@ const CheckoutForm= ({onConfirm})=>{
         const userData={
             name,phone,email
         }
-        onConfirm(userData)
+        onConfirm(userData);
     }
 
     return(
       <div style={CheckoutFormDivStyle}>
-            <form style={CheckoutFormDivStyle} onSubmit={handleConfirm} >
-                <label style={LabelStyle} htmlFor="">
+            <form  style={CheckoutFormDivStyle} onSubmit={handleConfirm} >
+                <label style={LabelStyle} >
                     Nombre
-                    <input style={InputStyle} type="text" value={name} onChange={({target})=>setName(target.value)} />
+                    <input required style={InputStyle} type="text" value={name} onChange={({target})=>setName(target.value)} />
                 </label>
-                <label style={LabelStyle} htmlFor="">
+                <label style={LabelStyle} >
                     Email
-                    <input style={InputStyle} type="email" value={email} onChange={({target})=>setEmail(target.value)} />
+                    <input required style={InputStyle} type="email" value={email} onChange={({target})=>setEmail(target.value)} />
                 </label>
-                <label style={LabelStyle} htmlFor="">
+                <label style={LabelStyle} >
                     Telefono
-                    <input style={InputStyle} type="number" value={phone} onChange={({target})=>setPhone(target.value)} />
+                    <input required style={InputStyle} type="number" value={phone} onChange={({target})=>setPhone(target.value)} />
                 </label>
                 <div>
-                    <button style={SubmitStyle}  type="submit">Crear Orden</button>
+                    <button style={SubmitStyle} type="submit"  >Crear Orden</button>  
                 </div>
-            
             </form>
       </div>
     )

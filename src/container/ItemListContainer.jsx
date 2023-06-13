@@ -1,8 +1,9 @@
-import React,{useEffect, useState} from "react";
-import {collection,getDocs } from "firebase/firestore";
 import { db } from "../services/firebaseConfig";
-import Card from "../components/Card/Card";
 import { containerStyle } from "./ItemContainerStyles";
+import {collection,getDocs } from "firebase/firestore";
+import ItemList from "../components/ItemList/ItemList";
+import React,{useEffect, useState} from "react";
+
 const ItemListContainer =()=>{
     const [items,setItems]=useState([]);
     const [loading,setLoading]= useState(true);
@@ -15,25 +16,13 @@ const ItemListContainer =()=>{
               
         });
         setTimeout(()=>{
-           
             setLoading(false);
         },2000);
-
-
     },[]);
-   
-  
-
-
+    
     return (
         <div style={containerStyle}>
-           {loading ? (
-            <p>Cargando...</p>
-         ) : (
-            items.map((item)=>(
-               <Card key={item.id} item={item}></Card>
-            ))
-         )}
+           {loading ? <p>Cargando...</p> : <ItemList items={items}/>}
         </div>
     )
 }

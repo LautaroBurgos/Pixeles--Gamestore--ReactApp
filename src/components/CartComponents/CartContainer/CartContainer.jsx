@@ -1,29 +1,15 @@
 import { CartContext } from "../../../context/CartContext";
-import { useContext } from "react";
+import { CartContainerStyle,CartRootStyle } from "./CartContainerStyles";
 import CartView from "../CartView/CartView";
 import EmptyCart from "../EmptyCart/EmptyCart";
-const CartContainerStyle={
-    height:'100%',
-    width:'90%',
-    display:'flex',
-    alignItems:'center',
-    flexDirection:'column'
-}
-const CartRootStyle={
-    display:'flex',
-    justifyContent:'center',
-    height:'90vh'
-}
+import { useContext } from "react";
 
 const CartContainer =()=>{
     const { cartList} = useContext(CartContext);
     return(
-        
         <div style={CartRootStyle}>
             <div style={CartContainerStyle}>
-           
-           {cartList.length>0 ? <CartView/> : <EmptyCart/>}
-           
+                {cartList.length>0 ? <CartView/> :<EmptyCart/>}
             </div>
         </div>
     )

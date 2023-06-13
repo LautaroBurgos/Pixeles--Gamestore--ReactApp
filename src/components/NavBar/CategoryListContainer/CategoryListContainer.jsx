@@ -1,17 +1,8 @@
-import { Link } from "react-router-dom";
 import categories from "../../../categories.json";
-const linkStyle={
-    color:'white',
-    cursor:'pointer',
-    marginLeft:'10px',
-    marginRight:'10px'
-}
-const categoryListStyle={
-    display:'flex'
-}
+import { categoryListStyle,linkStyle } from "./CategoryListContainerStyles";
+import { Link } from "react-router-dom";
 
 const CategoryListContainer =()=>{
-    
     return(
         <div style={categoryListStyle}>
             <Link  to={`/`} style={linkStyle} >
@@ -21,7 +12,6 @@ const CategoryListContainer =()=>{
                 <Link key={category.idCategory} style={linkStyle} to={`category/${category.idCategory}`}>
                     <p > {category.name}</p>
                 </Link>
-            
          ))}
     </div>
     )

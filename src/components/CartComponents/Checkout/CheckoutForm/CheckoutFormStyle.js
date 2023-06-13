@@ -28,4 +28,18 @@ const SubmitStyle={
     cursor:'pointer',
     backgroundColor: 'rgb(47, 44, 72)',
 }
-export {CheckoutFormDivStyle,LabelStyle,InputStyle,SubmitStyle};
+const BriefData={
+    margin:'0 auto',
+    display:'flex',
+    justifyContent:'center',
+    flexDirection:'column',
+    alignItems:'center',
+    textAlign:'center',
+    width:'720px',
+    height:'150px',
+    backgroundColor: 'rgb(47, 44, 72)',
+    color:'white',
+    fontSize:'20px',
+    borderRadius:'10px'
+}
+export {BriefData,CheckoutFormDivStyle,LabelStyle,InputStyle,SubmitStyle};

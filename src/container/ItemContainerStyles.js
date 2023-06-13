@@ -39,8 +39,8 @@ const buttonStyle={
     cursor:'pointer',
     borderRadius:'10px'
   }
-  const linkStyle={
+const linkStyle={
     listStyle: 'none',
-    color:'white',
-  }
+    color:'white'
+}
   export {containerStyle,imgStyle,titleStyle,linkStyle,buttonStyle,cardStyle};

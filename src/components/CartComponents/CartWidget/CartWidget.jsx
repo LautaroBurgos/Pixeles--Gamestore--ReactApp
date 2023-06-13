@@ -1,8 +1,7 @@
-import React from "react";
-import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { cartWidgetStyle } from "./CartWidgetStyles";
 import { Link } from "react-router-dom";
+import { React,useContext } from "react";
 const CartWidget =()=>{
     const { cartList } = useContext(CartContext);
     function calculateTotalItems(cartList) {
@@ -14,11 +13,10 @@ const CartWidget =()=>{
     }
     return (
         <Link to={`/cart`} style={{textDecoration: 'none'}} >
-                        <div style={cartWidgetStyle}>
-            <p> 🛒{calculateTotalItems(cartList)}</p>
+            <div style={cartWidgetStyle}>
+                <p> 🛒{calculateTotalItems(cartList)}</p>
             </div>
         </Link>
-
     )
 }
 export default CartWidget;

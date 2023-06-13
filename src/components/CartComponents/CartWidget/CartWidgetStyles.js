@@ -8,8 +8,7 @@ const cartCardStyle={
     margin:'10px 5px',
     borderRadius:'20px',
     backgroundColor:'white',
-    textAlign:'left'
-    
+    textAlign:'left' 
 }
 const cartWidgetStyle={
     backgroundColor:'white',
