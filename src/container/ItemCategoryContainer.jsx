@@ -20,9 +20,7 @@ const ItemCategoryContainer =()=>{
                 setFilteredItems(snapshot.docs.map((doc)=>({id:doc.id,...doc.data()})));
         });
         setTimeout(()=>{
-     
             setLoading(false);
-            
         },2000);
 
     },[idCategory]);

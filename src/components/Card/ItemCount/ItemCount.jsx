@@ -30,18 +30,18 @@ function ItemCount({item,stock,initial}){
     }
     return ( 
         <div>
-            {
-                added
-                ?   <>
+            { added ?   
+                    <>
                         <Link style={{color:'black'}} to={`/cart`}  >
                         <p  key="Inicio">Finalizar compra</p>
                         </Link>
                     </>
-                :
-                <> 
-                    <ItemQuantitySelector validarCantidadRestar={validarCantidadRestar} validarCantidadSumar={validarCantidadSumar} stockInt={stockInt} count={count}/>
-                    <AddItemButton handleAddToCart={handleAddToCart} count={count} item={item} />
-                </>
+                    :
+                    <> 
+                        <p>{stockInt} unidades disponibles</p>  
+                        <ItemQuantitySelector validarCantidadRestar={validarCantidadRestar} validarCantidadSumar={validarCantidadSumar} stockInt={stockInt} count={count}/>
+                        <AddItemButton handleAddToCart={handleAddToCart} count={count} item={item} />
+                    </>
             }    
         </div>
     )
