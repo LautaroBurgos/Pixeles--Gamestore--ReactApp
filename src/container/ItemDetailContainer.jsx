@@ -3,6 +3,7 @@ import {doc,getDoc} from "firebase/firestore";
 import ItemDetail from "../components/ItemDetail/ItemDetail";
 import {useParams } from "react-router-dom";
 import React,{ useState,useEffect } from "react";
+import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 
 const detailContainerStyle={
     marginLeft:'40px',
@@ -37,7 +38,7 @@ const ItemDetailContainer =()=>{
 
     return (
             <div style={detailContainerStyle}>
-                {loading ? <p>Cargando...</p> : <ItemDetail item={item} onStock={onStock}/>}
+                {loading ? <LoadingScreen/> : <ItemDetail item={item} onStock={onStock}/>}
             </div>     
     )
 }

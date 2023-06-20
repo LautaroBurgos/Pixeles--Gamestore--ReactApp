@@ -1,15 +1,13 @@
 import Brief from "./Brief/Brief";
 import { BriefData } from "./CheckoutForm/CheckoutFormStyle";
-import {db} from "../../../services/firebaseConfig";
-import { doc } from "firebase/firestore";
 import { CartContext } from "../../../context/CartContext";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
+import {db} from "../../../services/firebaseConfig";
+import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { Timestamp, addDoc, collection, updateDoc, writeBatch } from "firebase/firestore";
+import {doc, Timestamp, addDoc, collection, updateDoc, writeBatch } from "firebase/firestore";
+import { RootDivStyle,divStyle,ButtonStyle } from "./CheckoutStyle";
 
-const divStyle={
-    textAlign:'center'
-}
 const Checkout =()=>{
     const [loading,setLoading]=useState(false);
     const [orderId,setOrderId]=useState('');
@@ -47,22 +45,22 @@ const Checkout =()=>{
         }
     }
     if(loading){
-        return <h1>Se esta generando su orden...</h1>
+        return <h1 style={{textAlign:'center'}}>Se esta generando su orden...</h1>
     }
     if(orderId){
         return (
-            <>     
+            <div style={RootDivStyle} >     
                 <Brief order={objOrder}/>
                 <div style={BriefData}>    
                     <h3>TOTAL: ${objOrder.total}</h3>
                     <h3>El id de su orden es: {orderId}</h3>
                 </div>
-            </>
+                <Link to={`/`}><button style={ButtonStyle}>Volver al inicio</button></Link>
+            </div>
         )
     }
     return(
       <div style={divStyle}>
-        <h1>Checkout</h1>
         <CheckoutForm onConfirm={createOrder}/>
       </div>
    )

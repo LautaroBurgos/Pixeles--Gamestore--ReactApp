@@ -4,6 +4,7 @@ import {containerStyle} from "./ItemContainerStyles";
 import {collection,getDocs, query, where } from "firebase/firestore";
 import React,{useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 
 const ItemCategoryContainer =()=>{
     const [loading,setLoading]= useState(true);
@@ -26,11 +27,13 @@ const ItemCategoryContainer =()=>{
     },[idCategory]);
 
     return (
-        <div style={containerStyle}>
-            {loading ? <p>Cargando...</p> : 
-            filteredItems.map((item)=>(
+        <div>
+            {loading ? <LoadingScreen/> : 
+            <div style={containerStyle}>
+               {filteredItems.map((item)=>(
                 <Card key={item.id} item={item}></Card>
-            ))}
+                ))}
+            </div>}
         </div>
     )
 }

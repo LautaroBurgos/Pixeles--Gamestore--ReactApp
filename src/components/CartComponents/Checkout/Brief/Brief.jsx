@@ -1,8 +1,7 @@
-import { divStyle,BriefCardStyle, BriefContainer } from "./BriefStyles";
-
+import { divStyle,BriefCardStyle, BriefContainer, RootDivStyle } from "./BriefStyles";
 const Brief=({order})=>{
     return(
-        <div style={{display:'flex',justifyContent:'center'}} >
+        <div style={RootDivStyle} >
             <div style={BriefContainer} >
                 <h2>Detalle de compra</h2>
                 <h4>Comprador : {order.buyer.name}</h4>
@@ -16,8 +15,10 @@ const Brief=({order})=>{
                         </div>
                     ))
                 }
-                </div>         
+                </div>     
+                    
             </div>
+           
         </div>
     )
 }

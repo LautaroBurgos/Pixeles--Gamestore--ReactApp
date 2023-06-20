@@ -34,4 +34,11 @@ const BriefContainer={
     margin:'20px auto 50px auto',
     color:'white'
 }
-export {BriefContainer,BriefCardStyle,divStyle};
+const RootDivStyle={
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    flexDirection:'column',
+    width:'90%'
+}
+export {RootDivStyle,BriefContainer,BriefCardStyle,divStyle};
